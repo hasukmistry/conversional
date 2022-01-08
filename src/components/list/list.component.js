@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 /**
  * Renders ListComponent for the main application.
  * Generally, It is invoked using renderComponent().
@@ -12,7 +13,7 @@ class ListComponent extends React.Component {
 		let markup = null;
 		if ( this.props.li ) {
 			const listItems = this.props.li.map( ( text, i ) => {
-				return <li key={ i } className='leading-8'>{text}</li>;
+				return <li key={ i } className='leading-8'>{ text }</li>;
 			} );
 			markup = <ul data-testid='ListComponent' className='list-disc list-inside'>{ listItems }</ul>;
 		}
@@ -24,5 +25,13 @@ class ListComponent extends React.Component {
 		);
 	};
 }
+
+ListComponent.propTypes = {
+	li: PropTypes.array.isRequired,
+	children: PropTypes.oneOfType( [
+		PropTypes.array,
+		PropTypes.instanceOf( null ),
+	] )
+};
 
 export default ListComponent;

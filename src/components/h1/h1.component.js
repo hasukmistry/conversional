@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 /**
  * Renders H1Component for the main application.
  * Generally, It is invoked using renderComponent().
@@ -16,5 +17,13 @@ class H1Component extends React.Component {
 		return markup;
 	};
 }
+
+H1Component.propTypes = {
+	text: PropTypes.string.isRequired,
+	children: PropTypes.oneOfType( [
+		PropTypes.array,
+		PropTypes.instanceOf( null ),
+	] )
+};
 
 export default H1Component;

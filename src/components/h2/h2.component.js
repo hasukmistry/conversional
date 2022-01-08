@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 /**
  * Renders H2Component for the main application.
  * Generally, It is invoked using renderComponent().
@@ -16,5 +17,13 @@ class H2Component extends React.Component {
 		return markup;
 	};
 }
+
+H2Component.propTypes = {
+	text: PropTypes.string.isRequired,
+	children: PropTypes.oneOfType( [
+		PropTypes.array,
+		PropTypes.instanceOf( null ),
+	] )
+};
 
 export default H2Component;

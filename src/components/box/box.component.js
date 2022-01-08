@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 /**
  * Renders BoxComponent for the main application.
  * Generally, It is invoked using renderComponent().
@@ -18,5 +19,13 @@ class BoxComponent extends React.Component {
 		);
 	};
 }
+
+BoxComponent.propTypes = {
+	borderSize: PropTypes.string,
+	children: PropTypes.oneOfType( [
+		PropTypes.array,
+		PropTypes.instanceOf( null ),
+	] )
+};
 
 export default BoxComponent;

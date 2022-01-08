@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { ModalContext } from './modal.context';
 import Modal from './modal.class';
@@ -69,5 +70,16 @@ class ModalComponent extends React.Component {
 }
 
 ModalComponent.contextType = ModalContext;
+
+ModalComponent.propTypes = {
+	id: PropTypes.string.isRequired,
+	isOpen: PropTypes.bool.isRequired,
+	width: PropTypes.string,
+	height: PropTypes.string,
+	children: PropTypes.oneOfType( [
+		PropTypes.array,
+		PropTypes.instanceOf( null ),
+	] )
+};
 
 export default ModalComponent;

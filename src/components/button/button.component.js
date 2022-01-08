@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ModalContext } from '../modal/modal.context';
 import Modal from '../modal/modal.class';
 /**
@@ -34,5 +35,14 @@ class ButtonComponent extends React.Component {
 }
 
 ButtonComponent.contextType = ModalContext;
+
+ButtonComponent.propTypes = {
+	text: PropTypes.string.isRequired,
+	onClickModal: PropTypes.string, // Valid modal id to open a popup.
+	children: PropTypes.oneOfType( [
+		PropTypes.array,
+		PropTypes.instanceOf( null ),
+	] )
+};
 
 export default ButtonComponent;

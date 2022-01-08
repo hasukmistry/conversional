@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 /**
  * Renders ParagraphComponent for the main application.
  * Generally, It is invoked using renderComponent().
@@ -16,5 +17,13 @@ class ParagraphComponent extends React.Component {
 		return markup;
 	};
 }
+
+ParagraphComponent.propTypes = {
+	text: PropTypes.string.isRequired,
+	children: PropTypes.oneOfType( [
+		PropTypes.array,
+		PropTypes.instanceOf( null ),
+	] )
+};
 
 export default ParagraphComponent;

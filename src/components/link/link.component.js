@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ModalContext } from '../modal/modal.context';
 import Modal from '../modal/modal.class';
+import LinkPropTypes from './link.proptypes.class';
 /**
  * Renders LinkComponent for the main application.
  * Generally, It is invoked using renderComponent().
@@ -37,5 +39,15 @@ class LinkComponent extends React.Component {
 }
 
 LinkComponent.contextType = ModalContext;
+
+LinkComponent.propTypes = {
+	text: PropTypes.string.isRequired,
+	url: LinkPropTypes.url,
+	onClickModal: PropTypes.string, // Valid modal id to open a popup.
+	children: PropTypes.oneOfType( [
+		PropTypes.array,
+		PropTypes.instanceOf( null ),
+	] )
+};
 
 export default LinkComponent;
