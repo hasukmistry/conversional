@@ -1,0 +1,16 @@
+---
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+    environment:
+      - REACT_APP_LAYOUT="data2.json"
+      - PORT=3001
+    tty: true
+    ports:
+      - 3001:3001
+    volumes:
+      - .:/app
