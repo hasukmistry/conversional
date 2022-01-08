@@ -19,7 +19,7 @@ USER node
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH $PATH:/home/node/.npm-global/bin:/app/node_modules/.bin/
 ENV NODE_OPTIONS=--openssl-legacy-provider
-RUN npm i -g npm@latest yarn@latest npx serve jsdoc
+RUN npm i -g npm@latest yarn@latest npx serve
 
 WORKDIR /app
 
