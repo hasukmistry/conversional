@@ -27,7 +27,7 @@ It contains application code along with components and tests.
 Following are some of the important files in the project root directory:
 
 - `.env` - 
-It contains required environment variables. Only available when the app is running without docker.
+It contains the required environment variables to run the app locally.
 
 - `package.json`, `package-lock.json` -
 It describes project dependencies and core config. Read more here:
@@ -58,11 +58,9 @@ It consists of commands to simplify the build and run process.
 
 > `make run`
 
-It runs the app in the development mode.\
-Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
+It runs the app in the development mode. Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
-The changes will be reloaded automatically.\
-You may also see any lint errors in the console.
+The changes will be reloaded automatically. You may also see any lint errors in the console.
 
 It will start the react application on the specified port in `docker-compose.yml`. For instance, it will start the app on port 3001 by default. Check the following lines in the `docker-compose.yml`.
 ```
