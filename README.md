@@ -6,6 +6,7 @@ Valid JSON files should be put inside the `./layouts` folder.
 
 ## Table of content
 - [Project Structure](#project-structure)
+- [Prerequisite](#prerequisite)
 - [Getting Started](#getting-started)
 - [ENV Configuration](#env-configuration)
 
@@ -48,6 +49,10 @@ It contains a docker-compose config to build and run the app.
 
 - `Makefile` -
 It consists of commands to simplify the build and run process.
+
+## Prerequisite
+
+Make sure to install `docker`, `docker-compose` and `make` command utilities in your local machine.
 
 ## Getting Started
 
