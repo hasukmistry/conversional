@@ -7,7 +7,7 @@ services:
       context: ./
       dockerfile: docker/Dockerfile
     environment:
-      - REACT_APP_LAYOUT="data2.json"
+      - REACT_APP_LAYOUT="data3.json"
       - PORT=3001
     tty: true
     ports:
