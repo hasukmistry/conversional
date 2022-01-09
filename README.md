@@ -1,25 +1,84 @@
-# Getting Started with Create React App
+# React Component Builder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React app that renders the content based on configuration only. It is able to render a JSON data structure into a functioning app.
 
-## Available Scripts
+Valid JSON files should be put inside the `./layouts` folder.
 
-In the project directory, you can run:
+## Table of content
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
 
-### `npm start`
+## Project Structure
+> `./` -
+Root directory contains environment config and project setup files.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> `docker` -
+It contains Dockerfile to build a container image.
 
-The page will reload when you make changes.\
+> `layouts` -
+It contains valid JSON data structure files.
+
+> `public` -
+It contains core files to render an app into the browser.
+
+> `src` -
+It contains application code along with components and tests.
+
+Following are some of the important files in the project root directory:
+
+- `.env` - 
+It contains required environment variables. Only available when the app is running without docker.
+
+- `package.json`, `package-lock.json` -
+It describes project dependencies and core config. Read more here:
+[https://docs.npmjs.com/cli/v8/configuring-npm/package-json](https://docs.npmjs.com/cli/v8/configuring-npm/package-json)
+[https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json](https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json)
+
+- `postcss.config.js` -
+It contains config for postcss plugin.
+Read more here: [https://postcss.org/](https://postcss.org/)
+
+- `tailwind.config.js` -
+It contains config for tailwind plugin.
+Read more here: [https://tailwindcss.com/docs/guides/create-react-app](https://tailwindcss.com/docs/guides/create-react-app)
+
+- `docker-compose.yml` -
+It contains a docker-compose config to build and run the app.
+
+- `Makefile` -
+It consists of commands to simplify the build and run process.
+
+## Getting Started
+
+### Install Node Modules & Build Docker Image
+
+> `make setup`
+
+### Run app locally
+
+> `make run`
+
+It runs the app in the development mode.\
+Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
+
+The changes will be reloaded automatically.\
 You may also see any lint errors in the console.
 
-### `npm test`
+It will start the react application on the specified port in `docker-compose.yml`. For instance, it will start the app on port 3001 by default. Check the following lines in the `docker-compose.yml`.
+```
+environment:
+    - PORT=3001
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Run tests
 
-### `npm run build`
+> `make run-tests`
+
+Launches the test runner. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### Run production
+
+> `make run-production`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -27,44 +86,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
+This make command will start the app in production mode on the specified port in `docker-compose.yml`.
+
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
