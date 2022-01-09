@@ -7,6 +7,7 @@ Valid JSON files should be put inside the `./layouts` folder.
 ## Table of content
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
+- [ENV Configuration](#env-configuration)
 
 ## Project Structure
 > `./` -
@@ -52,11 +53,15 @@ It consists of commands to simplify the build and run process.
 
 ### Install Node Modules & Build Docker Image
 
-> `make setup`
+```
+make setup
+```
 
 ### Run app locally
 
-> `make run`
+```
+make run
+```
 
 It runs the app in the development mode. Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
@@ -70,13 +75,17 @@ environment:
 
 ### Run tests
 
-> `make run-tests`
+```
+make run-tests
+```
 
 Launches the test runner. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### Run production
 
-> `make run-production`
+```
+make run-production
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -87,3 +96,11 @@ Your app is ready to be deployed!
 This make command will start the app in production mode on the specified port in `docker-compose.yml`.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## ENV Configuration
+
+Following env variables are available in docker-compose.yml.
+
+`REACT_APP_LAYOUT` - JSON data structure from which app will be rendered. By default, `data2.json` is used to render in the app.
+
+`PORT` - The port on which the application will run.
