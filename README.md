@@ -9,6 +9,9 @@ Valid JSON files should be put inside the `./layouts` folder.
 - [Prerequisite](#prerequisite)
 - [Getting Started](#getting-started)
 - [ENV Configuration](#env-configuration)
+- [JSON Data Structure](#json-data-structure)
+- [Components](#Components)
+- [Tests](#tests)
 
 ## Project Structure
 > `./` -
@@ -109,3 +112,15 @@ Following env variables are available in docker-compose.yml.
 `REACT_APP_LAYOUT` - JSON data structure from which app will be rendered. By default, `data2.json` is used to render in the app.
 
 `PORT` - The port on which the application will run.
+
+## JSON Data Structure
+
+Find out information about JSON data structure and their usage in [README.md](layouts/README.md)
+
+## Components
+
+Find out information about components and their usage in [README.md](src/README.md)
+
+## Tests
+
+Find out information about tests and their usage in [README.md](src/README.md)
