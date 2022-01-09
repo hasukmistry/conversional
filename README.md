@@ -119,8 +119,8 @@ Find out information about JSON data structure and their usage in [README.md](la
 
 ## Components
 
-Find out information about components and their usage in [README.md](src/README.md)
+Find out information about components and their usage in [README.md](src/README.md#components)
 
 ## Tests
 
-Find out information about tests and their usage in [README.md](src/README.md)
+Find out information about tests and their usage in [README.md](src/README.md#tests)
